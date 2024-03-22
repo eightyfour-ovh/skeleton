@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  eightyfour:
+    hostname: eightyfour.localhost
+    ports:
+      - "8484:8000"  # nginx -> (php-fpm + prometheus)
+    environment:
+      - XDEBUG_MODE=coverage
+    volumes:
+      - ./:/app

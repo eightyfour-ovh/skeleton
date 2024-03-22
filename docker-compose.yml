@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  eightyfour:
+    hostname: eightyfour
+    container_name: eightyfour
+    build:
+      context: .
+      dockerfile: Dockerfile
+    init: true
+    # image: ghcr.io/eightyfour-ovh/eightyfour:latest
+    volumes:
+      - .env:/app/.env
+    networks:
+      eightyfour:
+
+networks:
+  eightyfour:

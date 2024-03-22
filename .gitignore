@@ -1,0 +1,10 @@
+# IDEs
+.idea/
+.vscode/
+
+# Composer/Project
+.env.local
+var/
+vendor/
+
+# Misc

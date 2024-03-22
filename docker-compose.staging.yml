@@ -1,0 +1,8 @@
+version: "3.9"
+
+services:
+  eightyfour:
+    ports:
+      - "80:8000"  # nginx -> (php-fpm + prometheus)
+    environment:
+      - XDEBUG_MODE=off
