@@ -1,16 +1,19 @@
 version: "3.9"
 
 services:
-  eightyfour:
-    hostname: eightyfour
-    container_name: eightyfour
+  fuzzy-api:
+    hostname: fuzzy-api
+    container_name: fuzzy-api
     build:
       context: .
       dockerfile: Dockerfile
     init: true
-    # image: ghcr.io/eightyfour-ovh/eightyfour:latest
+    ports:
+      - "8484:8000"  # nginx -> (php-fpm + prometheus)
+    environment:
+      - XDEBUG_MODE=coverage
     volumes:
-      - .env:/app/.env
+      - ./:/app
     networks:
       eightyfour:
 

@@ -1,15 +1,7 @@
 .DEFAULT_GOAL := help
 
-.PHONY: dev
-dev: ## Create docker image and a standalone container for dev environment
-	@docker compose -f docker-compose.yml -f docker-compose.dev.yml up --build -d
-
-.PHONY: staging
-staging: ## Create docker image and a standalone container like in staging environment
-	@docker compose -f docker-compose.yml -f docker-compose.staging.yml up --build -d
-
-.PHONY: prod
-prod: ## Create docker image and a standalone container for prod environment
+.PHONY: docker
+docker: ## Create docker image and a standalone container for dev environment
 	@docker compose -f docker-compose.yml up --build -d
 
 .PHONY: clean
