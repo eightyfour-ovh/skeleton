@@ -2,6 +2,9 @@
 .idea/
 .vscode/
 
+# Misc
+**/.DS_Store
+
 # Composer/Project
 .env.local
 var/
