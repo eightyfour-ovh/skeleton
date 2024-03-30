@@ -16,5 +16,14 @@
     "minimum-stability": "dev",
     "require": {
         "eightyfour/fuzzy": "dev-main"
+    },
+    "scripts": {
+        "linter": "vendor/bin/phplint --configuration=phplint.yml",
+        "phpstan": "vendor/bin/phpstan analyse -c phpstan.neon -vv",
+        "tests": "vendor/bin/phpunit --coverage-html var/data/phpunit-coverage",
+        "benchmark": [
+            "Composer\\Config::disableProcessTimeout",
+            "vendor/bin/phpbench run --report=default_report --output=fuzzy_html --retry-threshold=10"
+        ]
     }
 }

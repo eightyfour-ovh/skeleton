@@ -1,0 +1,58 @@
+# GitHub Actions for Fuzzy: PHP Analysis
+name: PHP analysis, tests & build
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - '*'
+  pull_request:
+
+jobs:
+  composer:
+    name: Composer Analysis (PHP ${{ matrix.php-versions }} on ${{ matrix.operating-system }})
+    runs-on: ${{ matrix.operating-system }}
+    strategy:
+      fail-fast: false
+      matrix:
+        operating-system: [ubuntu-22.04]
+        php-versions: ['8.3']
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-versions }}
+          extensions: gd, pgsql, pdo_mysql, pdo_pgsql, gmp, fileinfo, intl, opcache, xml, iconv, redis, mailparse
+          coverage: xdebug
+          tools: composer:v2
+
+      - name: Restore cached files
+        id: cache-restore
+        uses: actions/cache/restore@v4
+        with:
+          path: |
+            vendor/
+            var/cache/
+          key: ${{ runner.os }}-PHP${{ matrix.php-versions }}-cache-${{ github.ref }}-${{ hashFiles('**/composer.lock') }}-${{ github.run_id }}
+          restore-keys: ${{ runner.os }}-PHP${{ matrix.php-versions }}-cache-${{ github.ref }}-${{ hashFiles('**/composer.lock') }}-
+
+      - name: Prepare `dev` environment
+        run: |
+          cp .env .env.local
+          sed -i 's/APP_DEBUG=false/APP_DEBUG=true/g' .env.local
+          sed -i 's/APP_ENV=prod/APP_ENV=dev/g' .env.local
+
+      - name: Install Composer dependencies
+        run: composer install --no-progress --prefer-dist --optimize-autoloader
+
+      - name: Save cache
+        id: cache-save
+        uses: actions/cache/save@v4
+        with:
+          path: |
+            vendor/
+            var/cache/
+          key: ${{ runner.os }}-PHP${{ matrix.php-versions }}-cache-${{ github.ref }}-${{ hashFiles('**/composer.lock') }}-${{ github.run_id }}

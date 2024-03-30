@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b192cd212ced9e409c640f84514d9ee6",
+    "content-hash": "4989dc1e2d4975ad2bc7403e061d4ec8",
     "packages": [
         {
             "name": "eightyfour/fuzzy",
@@ -12,16 +12,21 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/eightyfour-ovh/fuzzy.git",
-                "reference": "a71586609fb1e59d75f102233988fd33f2a8dbb2"
+                "reference": "54817d9d82fe28d6ee4856a345ab373d4c5ee04a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/eightyfour-ovh/fuzzy/zipball/a71586609fb1e59d75f102233988fd33f2a8dbb2",
-                "reference": "a71586609fb1e59d75f102233988fd33f2a8dbb2",
+                "url": "https://api.github.com/repos/eightyfour-ovh/fuzzy/zipball/54817d9d82fe28d6ee4856a345ab373d4c5ee04a",
+                "reference": "54817d9d82fe28d6ee4856a345ab373d4c5ee04a",
                 "shasum": ""
+            },
+            "require": {
+                "ext-pdo": "*",
+                "php": "^8.3"
             },
             "require-dev": {
                 "overtrue/phplint": "^9.1",
+                "phpbench/phpbench": "^1.2",
                 "phpstan/phpstan": "^1.10",
                 "phpstan/phpstan-phpunit": "^1.3",
                 "phpunit/phpunit": "^11.0"
@@ -46,13 +51,15 @@
                 "issues": "https://github.com/eightyfour-ovh/fuzzy/issues",
                 "source": "https://github.com/eightyfour-ovh/fuzzy/tree/main"
             },
-            "time": "2024-03-22T06:03:27+00:00"
+            "time": "2024-03-23T05:27:29+00:00"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "eightyfour/fuzzy": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
