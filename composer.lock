@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/eightyfour-ovh/fuzzy.git",
-                "reference": "54817d9d82fe28d6ee4856a345ab373d4c5ee04a"
+                "reference": "40ef2312cfb338e5abb6e5fad301a299eac9680e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/eightyfour-ovh/fuzzy/zipball/54817d9d82fe28d6ee4856a345ab373d4c5ee04a",
-                "reference": "54817d9d82fe28d6ee4856a345ab373d4c5ee04a",
+                "url": "https://api.github.com/repos/eightyfour-ovh/fuzzy/zipball/40ef2312cfb338e5abb6e5fad301a299eac9680e",
+                "reference": "40ef2312cfb338e5abb6e5fad301a299eac9680e",
                 "shasum": ""
             },
             "require": {
@@ -41,6 +41,9 @@
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "proprietary"
+            ],
             "authors": [
                 {
                     "name": "Leslie Petrimaux"
@@ -51,7 +54,7 @@
                 "issues": "https://github.com/eightyfour-ovh/fuzzy/issues",
                 "source": "https://github.com/eightyfour-ovh/fuzzy/tree/main"
             },
-            "time": "2024-03-23T05:27:29+00:00"
+            "time": "2024-04-15T13:31:49+00:00"
         }
     ],
     "packages-dev": [],
