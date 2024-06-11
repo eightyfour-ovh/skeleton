@@ -73,7 +73,6 @@ RUN \
 
 WORKDIR /app/public
 
-# TODO: solve non-root errors
 # USER eightyfour
 
 CMD ["runsvdir", "-P", "/s"]

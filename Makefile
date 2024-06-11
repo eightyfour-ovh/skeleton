@@ -2,6 +2,10 @@
 
 .PHONY: docker
 docker: ## Create docker image and a standalone container for dev environment
+	@docker compose -f docker-compose.yml up -d
+
+.PHONY: build
+build: ## Create docker image and a standalone container for dev environment
 	@docker compose -f docker-compose.yml up --build -d
 
 .PHONY: clean

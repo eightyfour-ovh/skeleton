@@ -2,6 +2,7 @@ services:
   fuzzy-api:
     hostname: fuzzy-api
     container_name: fuzzy-api
+    image: ghcr.io/eightyfour-ovh/skeleton:main
     build:
       context: .
       dockerfile: Dockerfile
